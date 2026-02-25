@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Homework Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Homework Management Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dos-and-donts.html">Do's or Don't</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="agreement.html">JOIN TODAY</a></li>
+                <li><a href="buy-plan.html">Buy Plan</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="how-it-works.html">How to Work</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <div class="login-form">
+                <h2>Welcome Back!</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-type">Login as:</label>
+                        <select id="user-type">
+                            <option value="dsa">DSA</option>
+                            <option value="student">Student</option>
+                            <option value="worker">Worker</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="form-footer">
+                        <p>Don't have an account? <a href="user-registration.html">Sign Up</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Homework Management. All Rights Reserved. | <a href="terms.html">Term & Condition</a></p>
+    </footer>
+    <script src="login.js"></script>
+</body>
+</html>

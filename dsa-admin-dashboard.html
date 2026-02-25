@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Homework Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="logo.png" alt="Homework Management Logo"></a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dos-and-donts.html">Do's or Don't</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="user-registration.html">JOIN TODAY</a></li>
+                <li><a href="buy-plan.html">Buy Plan</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="how-it-works.html">How to Work</a></li>
+                <li><a href="dsa-login.html">DSA Login</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+        <section class="dashboard-header">
+            <h1>Admin Dashboard</h1>
+            <p>Monitor all assignments and their status.</p>
+        </section>
+
+        <section class="assignments-table-section">
+            <h2>All Assignments</h2>
+            <div class="table-container">
+                <table id="assignments-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Student UID</th>
+                            <th>Worker UID</th>
+                            <th>Status</th>
+                            <th>Question File</th>
+                            <th>Answer File</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Assignment rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="main.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+}
+
+.tab-content {
+    width: 100%;
+    max-width: 450px;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+.tab-content h2 {
+    margin-bottom: 2rem;
+    color: #fff;
+    font-family: 'Kalam', cursive;
+    font-size: 2.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #eee;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+.captcha-group .captcha-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.captcha-group .captcha-code {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    text-decoration: line-through;
+}
+
+.captcha-group .refresh-captcha {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+.tab-content button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff7e5f;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
+}
+
+.tab-content button[type="submit"]:hover {
+    background-color: #feb47b;
+    box-shadow: 0 6px 20px rgba(254, 180, 123, 0.5);
+}

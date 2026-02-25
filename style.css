@@ -1,1 +1,990 @@
-/* Add styles here */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Patrick+Hand&display=swap');
+
+/* Basic Styles */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+@keyframes animate-background {
+    0% {
+        background-color: #F5EDED;
+    }
+    50% {
+        background-color: #E2DAD6;
+    }
+    100% {
+        background-color: #F5EDED;
+    }
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #F5EDED;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    animation: animate-background 10s ease-in-out infinite;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80"%3E%3Crect fill="%23F5EDED" width="80" height="80"/%3E%3Cg fill-rule="evenodd"%3E%3Cg fill="%23E2DAD6" fill-opacity="0.4"%3E%3Cpath d="M0 0h40v40H0V0zm40 40h40v40H40V40z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+}
+
+
+
+/* Main Content and Leaderboard */
+.main-container {
+    display: flex;
+    flex-grow: 1;
+}
+
+.hero {
+    flex-grow: 1;
+    text-align: left;
+    padding: 4rem 2rem;
+    color: #333;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.leaderboard {
+    width: 300px;
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 2rem;
+    height: 350px; /* Fixed height for the board */
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.leaderboard h2 {
+    font-family: sans-serif; /* Use default sans-serif font */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0; /* Prevent the heading from shrinking */
+}
+
+.leaderboard .list-container {
+    overflow: hidden;
+    position: relative;
+    flex-grow: 1;
+}
+
+@keyframes scroll-up {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+.leaderboard ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    animation: scroll-up 50s linear infinite; /* Slowed down the animation */
+}
+
+.leaderboard li {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.leaderboard .earner-name, .leaderboard .earner-amount {
+    font-weight: bold;
+    text-shadow: none; /* Removed 3D effect */
+}
+
+
+
+/* Header and Navigation */
+header {
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 50px;
+    width: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure logo doesn't overflow its container */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #FF00FF;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+nav ul li a:hover {
+    color: #FF00FF;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0; /* Align dropdown to the right */
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    width: 150px; /* Give the dropdown a set width */
+    z-index: 10; /* Make sure dropdown appears above other content */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+/* Hero Section */
+.hero h1 {
+    font-family: 'Kalam', cursive;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero button {
+    background-color: #fff;
+    color: #333;
+    padding: 1rem 2rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #ddd;
+}
+
+/* Courses Section */
+.courses-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.courses-section h2 {
+    font-family: 'Kalam', cursive;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.course-card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08), 0 6px 6px rgba(0,0,0,0.1);
+    width: 320px;
+    margin: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card:hover {
+    top: -10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15), 0 15px 15px rgba(0,0,0,0.1), 0 0 0 4px #FF00FF, 0 0 60px #FF00FF;
+}
+
+.course-card img {
+    max-width: 100%;
+    height: 180px; /* fixed height for consistency */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #eee;
+}
+
+.course-card h3 {
+    font-family: 'Kalam', cursive;
+    font-size: 1.7rem;
+    margin: 0 0 1rem 0;
+    color: #333;
+    flex-grow: 1;
+}
+
+.buy-now {
+    background-color: #FF00FF;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: auto; /* Pushes the button to the bottom */
+}
+
+.buy-now:hover {
+    background-color: #E600E6;
+    box-shadow: 0 0 15px #FF00FF, 0 0 25px #FF00FF;
+    transform: translateY(-2px);
+}
+
+/* Flowchart Section */
+.worker-flowchart-section {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.worker-flowchart-section h2 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+
+.flowchart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.step {
+    background-color: #ecf0f1;
+    border: 2px solid #bdc3c7;
+    border-radius: 15px;
+    padding: 1.5rem;
+    width: 160px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+.step-icon {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 0.5rem;
+    font-family: 'Kalam', cursive;
+}
+
+.step-label {
+    font-size: 1rem;
+    color: #34495e;
+    font-weight: bold;
+}
+
+.arrow {
+    font-size: 2.5rem;
+    color: #3498db;
+    align-self: center;
+}
+
+/* Login Main */
+.login-main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+}
+
+.login-container {
+    max-width: 450px;
+    width: 100%;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.login-container h2 {
+    font-family: 'Kalam', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.input-group input:focus, .input-group select:focus {
+    outline: none;
+    border-color: #FF00FF;
+    box-shadow: 0 0 0 4px rgba(255, 0, 255, 0.2);
+}
+
+.btn {
+    background-color: #FF00FF;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background-color: #E600E6;
+    box-shadow: 0 0 15px #FF00FF, 0 0 25px #FF00FF;
+    transform: translateY(-2px);
+}
+
+.login-container p {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+
+
+/* About Section */
+.about-section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-section h1, .about-section h2 {
+    font-family: 'Kalam', cursive;
+}
+
+.key-points ul {
+    list-style: none;
+    padding: 0;
+}
+
+.key-points ul li {
+    margin-bottom: 1rem;
+}
+
+/* How It Works Section */
+.how-it-works-section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.how-it-works-section h1, .how-it-works-section h2, .how-it-works-section h3 {
+    font-family: 'Kalam', cursive;
+}
+
+.how-it-works-section ul, .how-it-works-section ol {
+    line-height: 1.6;
+}
+
+/* Terms and Conditions Section */
+.terms-section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.terms-section h1, .terms-section h2, .terms-section h3 {
+    font-family: 'Kalam', cursive;
+}
+
+.terms-section ul {
+    line-height: 1.6;
+}
+
+/* Do's and Don'ts Section (Handbook) */
+.handbook-section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.handbook-section h1, .handbook-section h2, .handbook-section h3, .handbook-section h4 {
+    font-family: 'Kalam', cursive;
+}
+
+.handbook-section ul {
+    line-height: 1.6;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 2rem;
+}
+
+.contact-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 2rem;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.contact-form, .contact-details {
+    flex: 1;
+}
+
+.contact-form h2, .contact-details h2 {
+    font-family: 'Kalam', cursive;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    outline: none;
+    border-color: #FF00FF;
+    box-shadow: 0 0 0 3px rgba(255, 0, 255, 0.2);
+}
+
+.contact-form button {
+    background-color: #FF00FF;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.contact-form button:hover {
+    background-color: #E600E6;
+    transform: translateY(-2px);
+}
+
+.required-star {
+    color: red;
+    margin-left: 4px;
+}
+
+/* Custom Checkbox Styles */
+.form-group input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: #007bff; /* Use a brand color */
+    width: 1.25em;
+    height: 1.25em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.25em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.form-group input[type="checkbox"]:hover {
+    background-color: #f0f8ff;
+}
+
+
+.form-group input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #28a745; /* Green checkmark */
+    background-color: #28a745;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform-origin: center;
+}
+
+.form-group input[type="checkbox"]:checked {
+    background-color: #e6ffed;
+    border-color: #28a745;
+}
+
+
+.form-group input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+/* Ensure labels are aligned with custom checkboxes */
+.form-group div {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Add some space between checkbox and label */
+    margin-bottom: 0.5rem;
+}
+
+.form-group div label {
+    margin-bottom: 0; /* Override default label margin */
+    font-weight: normal; /* Make checkbox labels normal weight */
+}
+
+
+#agreement-form .form-group label {
+    display: flex;
+    align-items: flex-start; /* Align to the top */
+    gap: 0.75rem;
+}
+
+#agreement-form input[type="checkbox"] {
+    margin-right: 0; /* Reset margin */
+    flex-shrink: 0; /* Prevent checkbox from shrinking */
+}
+
+/* Agreement Page */
+.agreement-main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agreement-container {
+    max-width: 600px;
+    width: 100%;
+    padding: 3rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.agreement-container h1 {
+    font-family: 'Kalam', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.agreement-container p {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+#agreement-form .form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+#agreement-form label {
+    font-weight: normal;
+}
+
+.proceed-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.proceed-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.proceed-button:hover:not(:disabled) {
+    background-color: #218838;
+    box-shadow: 0 0 15px #28a745, 0 0 25px #28a745;
+    transform: translateY(-2px);
+}
+
+.buy-plan-main {
+    padding: 4rem 2rem;
+}
+
+.pricing-section h1 {
+    font-family: 'Kalam', cursive;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.pricing-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 4rem;
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.plan-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 2.5rem;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.plan-card.popular {
+    border: 3px solid #FF00FF;
+    transform: scale(1.05);
+    box-shadow: 0 15px 45px rgba(255, 0, 255, 0.2);
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.plan-header h2 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.plan-header p {
+    color: #888;
+    margin-bottom: 2rem;
+}
+
+.price {
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: 'Kalam', cursive;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.price-period {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #777;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
+    flex-grow: 1;
+}
+
+.plan-features li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.plan-features .fa-check {
+    color: #28a745;
+}
+
+.plan-features .fa-times {
+    color: #dc3545;
+}
+
+.buy-now-btn {
+    background-color: #FF00FF;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: auto;
+}
+
+.buy-now-btn:hover {
+    background-color: #E600E6;
+    box-shadow: 0 0 15px #FF00FF, 0 0 25px #FF00FF;
+    transform: translateY(-2px);
+}
+
+.contact-us-btn {
+    background-color: #555;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.contact-us-btn:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.social-icons a {
+    color: #333;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .login-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan-card.popular {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .leaderboard {
+        width: 100%;
+        box-shadow: none;
+        transform: none;
+        margin: 1rem 0;
+        height: auto;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .dropdown {
+        margin-left: 0;
+    }
+
+    .hero {
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .course-card {
+        width: calc(100% - 2rem);
+    }
+
+    .flowchart-container {
+        flex-direction: column;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+        margin: 1rem 0;
+    }
+
+    .login-container, .agreement-container {
+        padding: 2rem;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-icons {
+        margin-top: 1rem;
+    }
+
+    .social-icons a {
+        margin: 0 0.5rem;
+    }
+
+    #application-form {
+        grid-template-columns: 1fr;
+    }
+
+    .login-button, .login-header {
+        grid-column: 1 / -1;
+    }
+}

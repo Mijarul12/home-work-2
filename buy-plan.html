@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Plan - Homework Management</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Homework Management Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dos-and-donts.html">Do's or Don't</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="agreement.html">JOIN TODAY</a></li>
+                <li><a href="buy-plan.html">Buy Plan</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="how-it-works.html">How to Work</a></li>
+                <li><a href="dsa-login.html">DSA Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="buy-plan-main">
+        <section class="pricing-section">
+            <h1>Choose Your Plan</h1>
+            <p class="pricing-subtitle">Unlock premium features and get your homework done faster.</p>
+            <div class="pricing-container">
+                <div class="plan-card" data-plan="basic" data-amount="19900">
+                    <div class="plan-header">
+                        <h2>Basic</h2>
+                        <p>For casual users</p>
+                    </div>
+                    <div class="price">
+                        <span class="price-amount">₹199</span>
+                        <span class="price-period">/ month</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i>Post up to 5 assignments</li>
+                        <li><i class="fas fa-check"></i>Standard support</li>
+                        <li><i class="fas fa-times"></i>Access to premium workers</li>
+                    </ul>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="plan-card popular" data-plan="premium" data-amount="49900">
+                    <div class="plan-header">
+                        <h2>Premium</h2>
+                        <p>For power users</p>
+                    </div>
+                    <div class="price">
+                        <span class="price-amount">₹499</span>
+                        <span class="price-period">/ month</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i>Post unlimited assignments</li>
+                        <li><i class="fas fa-check"></i>Priority support</li>
+                        <li><i class="fas fa-check"></i>Access to premium workers</li>
+                    </ul>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+                <div class="plan-card" data-plan="golden" data-amount="99900">
+                    <div class="plan-header">
+                        <h2>Golden Plan</h2>
+                        <p>For long-term users</p>
+                    </div>
+                    <div class="price">
+                        <span class="price-amount">₹999</span>
+                        <span class="price-period">/ year</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i>All Premium features</li>
+                        <li><i class="fas fa-check"></i>Dedicated account manager</li>
+                        <li><i class="fas fa-check"></i>Early access to new features</li>
+                    </ul>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Homework Management. All Rights Reserved. | <a href="terms.html">Term & Condition</a></p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="buy-plan.js"></script>
+</body>
+</html>

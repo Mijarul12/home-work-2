@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Homework Management</title>
+    <link rel="stylesheet" href="dsa-login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Homework Management Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dos-and-donts.html">Do's or Don't</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="agreement.html">JOIN TODAY</a></li>
+                <li><a href="buy-plan.html">Buy Plan</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="how-it-works.html">How to Work</a></li>
+                <li><a href="dsa-login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="login-main">
+        <div class="login-container">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="input-group">
+                    <select id="role" name="role">
+                        <option value="student">Student</option>
+                        <option value="worker">Worker</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    <label for="role">Role</label>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Homework Management. All Rights Reserved. | <a href="terms.html">Term & Condition</a></p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

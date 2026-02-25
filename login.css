@@ -1,0 +1,97 @@
+
+body {
+    background-color: #1a1a1a; /* Dark background */
+    background-image: subtle-noise.png; /* Subtle noise texture */
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    padding: 2rem;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 480px; /* Slightly wider form */
+    padding: 3.5rem; /* Increased padding */
+    background: rgba(30, 30, 30, 0.7); /* Darker, semi-transparent background */
+    border-radius: 24px; /* More rounded corners */
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5); /* Deeper shadow */
+    backdrop-filter: blur(12px); /* Stronger blur */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Softer border */
+    text-align: center;
+}
+
+.login-form h2 {
+    margin-bottom: 2.5rem; /* More space below heading */
+    color: #fff;
+    font-family: 'Kalam', cursive;
+    font-size: 3rem; /* Larger heading */
+}
+
+.form-group {
+    margin-bottom: 2rem; /* Increased margin */
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem; /* More space below label */
+    color: #ddd; /* Lighter label color */
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 1rem; /* Increased padding */
+    border: 1px solid #555; /* Darker border */
+    border-radius: 12px; /* More rounded input fields */
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    color: #fff; /* White text */
+    transition: box-shadow 0.3s ease; /* Smooth transition for focus effect */
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 126, 95, 0.5); /* Glow effect on focus */
+}
+
+.btn {
+    width: 100%;
+    padding: 1.2rem; /* Larger button */
+    border: none;
+    border-radius: 12px; /* More rounded button */
+    background-color: #ff7e5f;
+    color: white;
+    font-size: 1.4rem; /* Larger font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 20px rgba(255, 126, 95, 0.4); /* Enhanced shadow */
+}
+
+.btn:hover {
+    background-color: #feb47b;
+    box-shadow: 0 8px 25px rgba(254, 180, 123, 0.6); /* Stronger hover shadow */
+}
+
+.form-footer {
+    margin-top: 2rem; /* More space above footer */
+    color: #ccc; /* Lighter footer text */
+}
+
+.form-footer a {
+    color: #ff7e5f;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.form-footer a:hover {
+    color: #feb47b; /* Lighter color on hover */
+}
