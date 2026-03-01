@@ -18,14 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 const amount = button.dataset.amount;
 
                 const options = {
-                    "key": "rzp_test_S26pjlYCRtQXVC", 
+                    "key": "rzp_live_SLSXfQRNG3Pdfb", 
                     "amount": amount,
                     "currency": "INR",
                     "name": "Homework Management",
                     "description": `Purchase of ${courseName}`,
                     "image": "logo.png",
                     "handler": function (response){
-                        alert(`Payment successful for ${courseName}! Payment ID: ${response.razorpay_payment_id}`);
+                        if (courseName === "Trial Plan") {
+                            alert("Thank you for joining!");
+                        } else {
+                            alert(`Payment successful for ${courseName}! Payment ID: ${response.razorpay_payment_id}`);
+                        }
                     },
                     "theme": {
                         "color": "#FF00FF"
@@ -144,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const options = {
-                "key": "rzp_test_S26pjlYCRtQXVC", 
+                "key": "rzp_live_SLSXfQRNG3Pdfb", 
                 "amount": "49900", // Amount in paise (499 INR)
                 "currency": "INR",
                 "name": "Homework Management",

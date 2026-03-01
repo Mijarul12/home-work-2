@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 const options = {
-                    key: 'rzp_live_SL3CsZmkbWBD7c',
+                    key: 'rzp_live_SLSXfQRNG3Pdfb',
                     amount: amount,
                     currency: 'INR',
                     name: 'Homework Management',
